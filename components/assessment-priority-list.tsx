@@ -23,12 +23,16 @@ const barStyles = {
 export function AssessmentPriorityList({
   assessments,
   today,
+  hasAnyAssessments,
 }: {
   assessments: Assessment[];
   today: string;
+  hasAnyAssessments: boolean;
 }) {
   if (assessments.length === 0) {
-    return <EmptyState />;
+    return (
+      <EmptyState variant={hasAnyAssessments ? "all-caught-up" : "no-assessments"} />
+    );
   }
 
   return (

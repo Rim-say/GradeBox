@@ -34,6 +34,7 @@ export default function DashboardPage() {
         <AssessmentPriorityList
           assessments={rankedAssessments}
           today={sampleToday}
+          hasAnyAssessments={sampleAssessments.length > 0}
         />
       </section>
     </div>
