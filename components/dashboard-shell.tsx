@@ -56,7 +56,13 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
   );
 }
 
-export function DashboardShell({ children }: { children: ReactNode }) {
+export function DashboardShell({
+  children,
+  welcome,
+}: {
+  children: ReactNode;
+  welcome: ReactNode;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
@@ -117,14 +123,7 @@ export function DashboardShell({ children }: { children: ReactNode }) {
                 <span className="block h-0.5 w-4 bg-slate-700" />
               </span>
             </button>
-            <div className="min-w-0">
-              <p className="text-base font-semibold text-slate-900">
-                Welcome back, {teacherName}
-              </p>
-              <p className="hidden text-sm text-slate-500 sm:block">
-                Here is your grading workload.
-              </p>
-            </div>
+            <div className="min-w-0">{welcome}</div>
           </div>
           <Link
             href="/assessments?new=1"
