@@ -4,7 +4,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
 import { signOut } from "@/app/login/actions";
-import { teacherName } from "@/lib/sample-data";
 
 const navItems = [
   { href: "/", label: "Dashboard" },
