@@ -221,7 +221,7 @@ async function ForecastContent() {
           className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
         >
           <h2 id="top-heading" className="text-base font-semibold text-slate-900">
-            Biggest contributors this week
+                Most work remaining this week
           </h2>
           <ol className="mt-3 space-y-2">
             {forecast.topContributors.map((item) => (
