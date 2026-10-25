@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, type ReactNode } from "react";
+import { signOut } from "@/app/login/actions";
 import { teacherName } from "@/lib/sample-data";
 
 const navItems = [
@@ -57,6 +58,14 @@ function NavLinks({ onNavigate }: { onNavigate?: () => void }) {
 
 export function DashboardShell({ children }: { children: ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  // The login page is shown without the sidebar and header.
+  if (pathname === "/login") {
+    return (
+      <div className="min-h-full bg-slate-50 px-4 py-8">{children}</div>
+    );
+  }
 
   return (
     <div className="min-h-full bg-slate-50">
@@ -78,6 +87,14 @@ export function DashboardShell({ children }: { children: ReactNode }) {
         <div className="mt-8 flex-1">
           <NavLinks onNavigate={() => setMobileOpen(false)} />
         </div>
+        <form action={signOut} className="mb-3">
+          <button
+            type="submit"
+            className="w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+          >
+            Sign out
+          </button>
+        </form>
         <p className="px-3 text-xs text-slate-400">
           Grading workload, made clearer.
         </p>

@@ -65,7 +65,9 @@ export function progressPercent(assessment: Assessment) {
 }
 
 // Complete = something was expected and every expected submission is graded.
-export function isComplete(assessment: Assessment) {
+export function isComplete(
+  assessment: Pick<Assessment, "expectedSubmissions" | "gradedSubmissions">,
+) {
   const expected = safeCount(assessment.expectedSubmissions);
   return expected > 0 && safeCount(assessment.gradedSubmissions) >= expected;
 }
