@@ -5,7 +5,7 @@
 Teachers juggle several classes and assessments at once, and students expect their grades back by a promised date. GradeBox ranks unfinished assessments by that promised return date and by how much grading is left, and it estimates how long the remaining grading will take.
 
 - **Live site:** `https://grade-box-five.vercel.app/`
-- **Code:** `https://grade-box-five.vercel.app/`
+- **Code:** `https://github.com/Rim-say/GradeBox`
 
 Built for the Moondev coding challenge in seven days, with Next.js, TypeScript, Tailwind CSS and Supabase.
 
